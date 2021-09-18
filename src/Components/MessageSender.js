@@ -4,12 +4,10 @@ import { Avatar } from "@material-ui/core";
 import VideocamIcon from "@material-ui/icons/Videocam";
 import PhotoLibraryIcon from "@material-ui/icons/PhotoLibrary";
 import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
-// import { useStateValue } from "./../StateProvider";
 import db from "../firebase";
 import firebase from "firebase";
 
 function MessageSender({ user }) {
-  // const [{ user }, dispatch] = useStateValue();
   const [input, setInput] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const handleSubmit = (e) => {
@@ -21,7 +19,6 @@ function MessageSender({ user }) {
       username: user[0].displayName,
       image: imageUrl,
     });
-    //some clever db stuff when click enter
     setInput("");
     setImageUrl("");
   };
